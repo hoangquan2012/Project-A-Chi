@@ -8,7 +8,7 @@ const MainLayout: React.FC  = () => {
     return (
         <Layout>
             <Header>
-
+                    
 			</Header>
         </Layout>
     );

@@ -1,12 +1,13 @@
-import { BrowserRouter, Navigate, Outlet, Route, Routes } from 'react-router-dom';
+import React from 'react';
+import { BrowserRouter, Route, Routes } from 'react-router-dom';
+
+import MainLayout from '../layouts/MainLayout';
 
 function Router() {
     return (
         <BrowserRouter>
             <Routes>
-                <Route>
-                    
-                </Route>
+                <Route element={<MainLayout />}></Route>
             </Routes>
         </BrowserRouter>
     );
