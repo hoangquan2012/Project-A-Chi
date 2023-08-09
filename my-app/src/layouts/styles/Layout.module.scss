@@ -1,0 +1,30 @@
+@import '../../components/GlobalStyles/setting/mixins';
+@import '../../components/GlobalStyles/setting/var';
+@import url('https://fonts.googleapis.com/css2?family=PT+Sans:wght@400;700&display=swap');
+
+//---------------- LAYOUT STYLED ---------------//
+
+.App {
+    background-color: $color-black;
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: 'PT Sans', sans-serif;
+    }
+}
+.container {
+    background-color: transparent;
+}
+//---------------- HEADER STYLED ---------------//
+.header {
+    background-color: transparent;
+}
+.header-wrapper {
+    @include flex($justify: space-between);
+}
+.header-right{
+    background: transparent;
+    color: $color-white;
+
+}
