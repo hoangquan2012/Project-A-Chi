@@ -7,12 +7,14 @@ import ContentLayout from './ContentLayout';
 import logo from '../common/images/logo.png';
 import classNames from 'classnames/bind';
 import styles from './styles/Layout.module.scss';
+import { useTranslation } from 'react-i18next';
 
 const cx = classNames.bind(styles);
 
 const MainLayout: React.FC = () => {
     const navigate = useNavigate();
     const location = useLocation();
+    const { t } = useTranslation();
     const { Header, Content, Footer } = Layout;
     return (
         <Layout className={cx('container')}>
@@ -25,10 +27,10 @@ const MainLayout: React.FC = () => {
                     </Col>
                     <Col>
                         <Menu className={cx('header-right')} mode="horizontal" disabledOverflow>
-                            <Menu.SubMenu title="HOME"></Menu.SubMenu>
-                            <Menu.SubMenu title="Chất lượng nước"></Menu.SubMenu>
-                            <Menu.SubMenu title="Chất lượng nước"></Menu.SubMenu>
-                            <Menu.SubMenu title="Chất lượng nước"></Menu.SubMenu>
+                            <Menu.SubMenu title={t('header.home')} className={cx('header-item')}></Menu.SubMenu>
+                            <Menu.SubMenu title={t('header.order')} className={cx('header-item')}></Menu.SubMenu>
+                            <Menu.SubMenu title={t('header.reservation')} className={cx('header-item')}></Menu.SubMenu>
+                            <Menu.SubMenu title={t('header.contact')} className={cx('header-item')}></Menu.SubMenu>
                         </Menu>
                     </Col>
                 </Row>

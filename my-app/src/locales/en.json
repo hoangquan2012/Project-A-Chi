@@ -1,0 +1,8 @@
+{
+    "header": {
+        "home": "Home",
+        "order": "Order",
+        "reservation": "Reservation",
+		"contact": "Contact"
+    }
+}
