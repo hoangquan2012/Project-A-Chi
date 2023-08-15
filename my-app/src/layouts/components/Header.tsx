@@ -12,6 +12,11 @@ function Header() {
     const { t, i18n } = useTranslation();
     const [isToggle, setIsToggle] = useState(false);
     const [currentLanguage, setCurrentLanguage] = useState(i18n.language);
+    const [currentMenu, setCurrentMenu] = useState('home');
+    const onClick = (e: any) => {
+        console.log('click ', currentMenu);
+        setCurrentMenu(e.key);
+    };
 
     const handleToggleNav = () => {
         setIsToggle(!isToggle);
@@ -22,6 +27,29 @@ function Header() {
         setCurrentLanguage(newLanguage);
     };
 
+    const items = [
+        {
+            label: t('header.home'),
+            key: 'home',
+            className: cx('header-item')
+        },
+        {
+            label: t('header.order'),
+            key: 'order',
+            className: cx('header-item')
+        },
+        {
+            label: t('header.reservation'),
+            key: 'reservation',
+            className: cx('header-item')
+        },
+        {
+            label: t('header.contact'),
+            key: 'contact',
+            className: cx('header-item')
+        }
+    ];
+
     return (
         <Header className={cx('header')}>
             <Row className={cx('header-wrapper')}>
@@ -31,12 +59,7 @@ function Header() {
                     </Link>
                 </Col>
                 <Col className={cx('header-menu')}>
-                    <Menu className={cx('header-right')} mode="horizontal" disabledOverflow>
-                        <Menu.SubMenu title={t('header.home')} className={cx('header-item')}></Menu.SubMenu>
-                        <Menu.SubMenu title={t('header.order')} className={cx('header-item')}></Menu.SubMenu>
-                        <Menu.SubMenu title={t('header.reservation')} className={cx('header-item')}></Menu.SubMenu>
-                        <Menu.SubMenu title={t('header.contact')} className={cx('header-item')}></Menu.SubMenu>
-                    </Menu>
+                    <Menu className={cx('header-right')} mode="horizontal" selectedKeys={[currentMenu]} onClick={onClick} items={items} disabledOverflow />
                 </Col>
                 <Col className={cx('header-icon-toggle')}>
                     <Link to="" className={cx('header-menu-toggle')} onClick={handleToggleNav}>

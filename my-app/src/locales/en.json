@@ -3,6 +3,13 @@
         "home": "Home",
         "order": "Order",
         "reservation": "Reservation",
-		"contact": "Contact"
+        "contact": "Contact"
+    },
+    "content": {
+        "intro-1": "Asia's best restaurant",
+        "intro-2": "American experience",
+        "intro-3": "Do you want to enjoy the best Asian food",
+        "intro-4": "HuQu is here for you!!",
+        "order": "Order now"
     }
 }
