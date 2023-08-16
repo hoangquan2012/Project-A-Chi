@@ -1,0 +1,152 @@
+@import "../../components/GlobalStyles/setting/mixins";
+@import "../../components/GlobalStyles/setting/var";
+@import "../../components/GlobalStyles/setting/type";
+@import url("https://fonts.googleapis.com/css2?family=PT+Sans:wght@400;700&display=swap");
+
+//---------------- LAYOUT STYLED ---------------//
+
+.App {
+  background-color: $color-black;
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "PT Sans", sans-serif;
+  }
+}
+.container {
+  background-color: transparent;
+}
+//---------------- HEADER STYLED ---------------//
+
+.header {
+  background-color: transparent;
+  padding: 0 $indent__l;
+  position: absolute;
+  width: 100%;
+  z-index: 99;
+}
+.header-logo {
+  img {
+    opacity: 0.7;
+  }
+}
+.header-wrapper {
+  @include flex($justify: space-between);
+  padding: $indent__m 5% $indent__xs 5%;
+}
+.header-right {
+  background: transparent;
+  color: $color-white;
+}
+.header-item {
+  font-weight: $medium;
+  font-size: $font-size__xl;
+  padding-inline: 0;
+  padding-right: $indent__xl;
+  color: $color-gray-light5;
+  &:global(.ant-menu-item-selected) {
+    color: $color-white !important;
+  }
+  &::after {
+    border: none !important;
+  }
+  &:last-child {
+    padding: 0;
+  }
+  &:hover {
+    color: $color-white !important;
+  }
+  
+}
+
+.header-icon-toggle {
+  z-index: 1;
+  .header-menu-toggle {
+    width: 60px;
+    padding: 0 15px;
+    display: block;
+  }
+  .menu-item {
+    height: 2px;
+    background: $color-white;
+    margin-bottom: 6px;
+    transition: all 0.3s ease;
+    &:last-child {
+      margin: 0;
+    }
+    &.first {
+      transform: rotate(45deg);
+      transform-origin: left top;
+    }
+    &.mid {
+      width: 0;
+      opacity: 0;
+      height: 6px;
+    }
+    &.last {
+      transform: rotate(-45deg);
+      transform-origin: left bottom;
+    }
+  }
+}
+
+.header-menu-bg {
+  position: fixed;
+  background-color: rgba(3, 3, 3, 0.8);
+  width: 100%;
+  height: 100vh;
+  top: 0;
+  left: 0;
+  right: 0;
+}
+
+.header-menu-nav-holder {
+  @include flex($direction: column);
+  position: fixed;
+  width: 100%;
+  height: 100vh;
+  top: 0;
+  left: 0;
+  right: 0;
+  .nav-list {
+    list-style-type: none;
+    font-size: 40px;
+    text-align: center;
+    .nav-item {
+      margin-bottom: 20px;
+      a {
+        color: $color-white;
+      }
+    }
+  }
+}
+
+//---------------- RESPONSIVE ---------------//
+
+@media (max-width: 480px) {
+  .header-menu {
+    display: none;
+  }
+  .header {
+    background-color: transparent;
+    padding: 0 $indent__s;
+    position: relative;
+  }
+  .header-wrapper {
+    @include flex($justify: space-between);
+    padding: $indent__s 2% $indent__xs 2%;
+  }
+}
+
+@media (min-width: 481px) and (max-width: 1024px) {
+  .header-menu {
+    display: none;
+  }
+}
+
+@media (min-width: 1024px) {
+  .header-icon-toggle {
+    display: none;
+  }
+}

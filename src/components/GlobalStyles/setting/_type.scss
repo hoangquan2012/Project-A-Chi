@@ -1,0 +1,42 @@
+//Size
+
+$font-size__lg: 24px;
+$font-size__xl: 20px;
+$font-size__l: 16px;
+$font-size__m: 14px;
+$font-size__s: 12px;
+$font-size__xs: 11px;
+
+//  Weights
+$font-weight__hairline: 100;
+$font-weight__extralight: 200;
+$font-weight__light: 300;
+$font-weight__regular: 400;
+$font-weight__heavier: 500;
+$font-weight__semibold: 600;
+$font-weight__bold: 700;
+$font-weight__extrabold: 800;
+$font-weight__heavy: 900;
+
+$thin: $font-weight__hairline;
+$exlight: $font-weight__extralight;
+$light: $font-weight__light;
+$normal: $font-weight__regular;
+$medium: $font-weight__heavier;
+$semibold: $font-weight__semibold;
+$bold: $font-weight__bold;
+$exbold: $font-weight__extrabold;
+$black: $font-weight__heavy;
+
+//  Styles
+$font-style__base: normal;
+$font-style__emphasis: italic;
+
+// Indent
+
+$indent__base: 20px;
+$indent__xl: 45px;
+$indent__l: 30px;
+$indent__m: 20px;
+$indent__s: 10px;
+$indent__xs: 5px;
